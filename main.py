@@ -49,6 +49,8 @@ neboj {name}, všechno bude! Kam dál?""")
     else:
         print("Zmateně stojíš a nemůžeš se rozhodnout. Pár děveček na tebe mezitím pokřikuje.")
 
+#VSTUP DO OBCHODU
+
 print(f"Obchodník: Vítejte, vítejte {name}! To je ale milé překvapení.")
 print("1 – Odkud víte jak se jmenuju?")
 print("2 – Zdravím, pěkné vetešnictví tu vedete.")
@@ -75,12 +77,14 @@ while True:
     else:
         print("Nevíš co říct. Trapná chvilka, kdy na sebe v tichosti koukáte.")
 
+#SAMOTNÝ OBCHOD - TRANSAKCE
+
 print("\nObchodník vysune z pultu platformu s nápisem 'horké zboží' a s očekáváním se podívá na tebe.")
 for item, price in shop_items.items():
     print(f"– {item} ({price} kreditů)")
 
 print(f"V tvém zorném poli zabliká vpravo nahoře stav tvého konta – {credit} kreditů.")
-print("Napiš název položky, kterou chceš koupit.")
+print("Napiš název položky, kterou chceš koupit. Jakmile budeš chtít skončit, napiš 'konec'")
 
 while True:
     choice = input("> ").strip()
@@ -101,6 +105,27 @@ while True:
 print("\nTvé aktuální vybavení:")
 for item in inventory:
     print(f"– {item}")
-print(f"Zbývající počet kreditů: {credits}")
+print(f"Zbývající počet kreditů: {credit}")
+
+#KONEC TRANSAKCE - POKRAČOVÁNÍ DIALOGU
+
+print(f"Obchodník: Takže {name}, byznys máme za sebou, ale je něco, co si člověk jen tak nekoupí a to je přátelské poklábosení. No, nemám pravdu?")
+print("Obchodník: Ačkoli mám kontakty po celém městě, proč si nepohovořit jenom tak mezi čtyřma očima?")
+print("\nChvíli se zamyslíš nad jeho slovy a zároveň přemýšlíš, co bys mu na to tak řekl. Co o sobě vlastně víš?")
+
+profession = vyber_povolani()
+
+print(f"A pak sis vzpomněl. Jsi {profession}, ale chceš mu to říct? Je to obchodník a informace jsou přeci jen také komoditou.")
+print("Jako kdybys ty sám tohle už dávno nevěděl.")
+
         
+#Tady budou pokračovat další dialogy
+#Představuju si - že tu bude dialog, který buď:
+#- nabídne možnosti drbů (řekni mi něco o tomhle městě)
+#- je tu nějaká práce?
+#- řekni mu o své profesi a něco o svém životě (mohl by si cenít tvé důvěry a jeho reputace by nepatrně stoupla - system repky?)
+#- ať nevotravuje a že máš cos chtěl
+
+
+
 
