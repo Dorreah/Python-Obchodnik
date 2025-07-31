@@ -1,21 +1,106 @@
 
 from funkce import *
+
+inventory = []
+credit = 200
+
+shop_items = {
+    "laserová mačeta": 120,
+    "kuře na kari v kapsli": 30,
+    "kokainový stimpack": 80
+}
+
+
         
-penezenka = {"mas": 50}
-mas = penezenka["mas"] 
-pozdrav("Davide")
-obchod = input("""Mohu nabídnout jedno z našich nejlepších koření?
-Po takovém život bude chutnat lépe! A nebo tu mám pro vás tyhle plody,
-po kterých žádná noc nebude jako předtím. Obojí za skvělých 50 zlatých.
-Nabídka jen pro vás, pane. Přijmete ji? (ano/ne) """)
+print("""Nacházíš se uprostřed rušných ulic Lunar City,
+kde tě krom slunce pálí na kůži i výpary z četných pruduchů z budouv,
+výfuků ze silných vznášedel a venkovních elektrických stanic.""")
 
-if obchod.lower() == "ano":
-    mas_dost_penez(mas, 50)
-else:
-    print("Tak nic no.")
-    
-print("Poslyšte ale, ještě jsem o vás moc neslyšel. Co ty jste vůbec zač?")
+print("""\nMíhající se světla a vjemy velkoměsta tě na chvíli ohromili natolik,
+že jsi na chvíli zapomněl, jak se vlastně jmenuješ.
+Bylo by dobré si to připomenout.""")
 
-povolani = vyber_povolani()
-print(f"""Aaaaa, vážený {povolani}!
-Přeji vám tedy mnoho štěstí.""")
+name = input("Pod jakým jménem tě mají znát obyvatelé Lunar City? ")
+
+print(f"""Od chvíle, co tvé motorkářské boty vstoupili do města, tě tvé náhodné i
+účelné známosti znají pod jménem {name}. Bylo by dobré, kdyby to prozatím tak zůstalo.""")
+print("""Lunar City nabízí spousta zajímavých příležitostí. Stojíš na náměstí Sunrise Plaza
+a světla neonů se odráží od tvé terénní motorky.""")
+print("Před tebou svítí výloha s nějrůznějšími zajímavými předměty, které nejnovější technologie nabízí.")
+print("Nalevo tě lákají svůdné úsměvy a rudá záře červených 'výloh' s tanečnicemi. Všechny koukají tvým směrem.")
+print("Napravo je bar se zářícím nápisem 'UNDERGROUND' s podtitulem 'Pro somráky tu máme držkový cocktail'.")
+print("\nKam to bude jako první?")
+print("1 – Brodel")
+print("2 – Bar")
+print("3 – Obchod")
+
+while True:
+    roam = input("> ")
+
+    if roam == "1":
+        print(f"""Bordel jsem ještě nenaprogramoval, ale je hezky vidět, na co myslíš jako první :-)
+neboj {name}, všechno bude! Kam dál?""")
+    elif roam == "2":
+        print("Bar je prozatím úplně zavřený, ještě jsem tam nic nanapsal. Snad se brzy otevře. Kam dál?")
+    elif roam == "3":
+        print("""Vcházíš do obchodu, kde to s otevřením dveří roztomile zacinká. Kdy by to byl řekl, že v roce
+2089 se budou ještě používat kovové zvonky. Staromilské, ale roztomilé. Zpoza rohu se vynoří postava.""")
+        break
+    else:
+        print("Zmateně stojíš a nemůžeš se rozhodnout. Pár děveček na tebe mezitím pokřikuje.")
+
+print(f"Obchodník: Vítejte, vítejte {name}! To je ale milé překvapení.")
+print("1 – Odkud víte jak se jmenuju?")
+print("2 – Zdravím, pěkné vetešnictví tu vedete.")
+print("3 – Otočit se a odejít")
+
+while True:
+    seller_answer = input("> ")
+
+    if seller_answer == "1":
+        print("Obchodnik: Vaše jméno není úplně neznáme a navíc... mám pár ptáčků, kteří rádi cvrlikají.")
+        print(f"Obchodník: V každém případě, co Vám, {name}, můžu nabídnout?")
+        break
+
+    elif seller_answer == "2":
+        print("Obchodník: Jaké vetešnictví?! Mám tady prvotřídní zboží od zbraní, přes stimulanty až po sběratelské kousky!")
+        print(f"Obchodník: V každém případě, co Vám, {name}, můžu nabídnout?")
+        break
+
+    elif seller_answer == "3":
+        print("Jen co jsi do obchodu přišel, už z něj zase odcházíš. Na tohle nemáš čas.")
+        print("A já neměl čas dodělat zbytek, takže... --KONEC HRY--")
+        exit()
+
+    else:
+        print("Nevíš co říct. Trapná chvilka, kdy na sebe v tichosti koukáte.")
+
+print("\nObchodník vysune z pultu platformu s nápisem 'horké zboží' a s očekáváním se podívá na tebe.")
+for item, price in shop_items.items():
+    print(f"– {item} ({price} kreditů)")
+
+print(f"V tvém zorném poli zabliká vpravo nahoře stav tvého konta – {credit} kreditů.")
+print("Napiš název položky, kterou chceš koupit.")
+
+while True:
+    choice = input("> ").strip()
+
+    if choice.lower() == "konec":
+        break
+    elif choice in shop_items:
+        price = shop_items[choice]
+        if credit >= price:
+            credit -= price
+            inventory.append(choice)
+            print(f"Koupil jsi {choice}. Zbývá ti ještě {credit} kreditů.")
+        else:
+            print("Obchodník: Na tohle nemáte dost kreditů!")
+    else:
+        print("Obchodník: Tuhle položku tu nemám. Vybírejte z toho co vidíte.")
+
+print("\nTvé aktuální vybavení:")
+for item in inventory:
+    print(f"– {item}")
+print(f"Zbývající počet kreditů: {credits}")
+        
+

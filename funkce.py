@@ -1,22 +1,20 @@
 def vyber_povolani():
     print("Zvol si své povolání:")
-    print("1 - Válečník")
-    print("2 - Kouzelník")
-    print("3 - Zloděj")
+    print("1 - Nájemný žoldák")
+    print("2 - Hacker")
+    print("3 - Plíživec")
     
     volba = input("Tvoje volba: ")
     
     if volba == "1":
-        return "Válečník"
+        return "Nájemný žoldák"
     elif volba == "2":
-        return "Kouzelník"
+        return "Hacker"
     elif volba == "3":
-        return "Zloděj"
+        return "Plíživec"
     else:
-        return "Neznámý tulák"
+        return "Pan tajemný"
 
-def pozdrav(jmeno):
-    print("Zdravím vás, vážený pane " + jmeno + "!")
 
 def mas_dost_penez(mas, cena):
     if mas >= cena:
