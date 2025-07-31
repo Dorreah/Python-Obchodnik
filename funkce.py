@@ -15,10 +15,3 @@ def vyber_povolani():
     else:
         return "Pan tajemný"
 
-
-def mas_dost_penez(mas, cena):
-    if mas >= cena:
-        print("Skvělé! Obchodovat s vámi je radost.")
-        print("–– Skořice a Viagra přidána do inventáře ––")
-    else:
-        print("Je mmi líto pane, ale nemáte na to dost zlatých.")

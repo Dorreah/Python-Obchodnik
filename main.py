@@ -10,6 +10,11 @@ shop_items = {
     "kokainový stimpack": 80
 }
 
+reputation_system = {
+    "obchodnik": 50,
+    "strážník": 50,
+    "informátorka": 50
+}
 
         
 print("""Nacházíš se uprostřed rušných ulic Lunar City,
@@ -117,6 +122,11 @@ profession = vyber_povolani()
 
 print(f"A pak sis vzpomněl. Jsi {profession}, ale chceš mu to říct? Je to obchodník a informace jsou přeci jen také komoditou.")
 print("Jako kdybys ty sám tohle už dávno nevěděl.")
+print("Co mu odpovíš?")
+print("1 – Hmmm, proč ne. Neznáš nějaké drby z okolí?")
+print("2 – Nevíš o nějaké práci?")
+print("3 – Řekni mu něco o své profesi a osobním životě.")
+print("4 – Hele, mám co jsem chtěl. Na tohle nemám čas.")
 
         
 #Tady budou pokračovat další dialogy
@@ -125,6 +135,8 @@ print("Jako kdybys ty sám tohle už dávno nevěděl.")
 #- je tu nějaká práce?
 #- řekni mu o své profesi a něco o svém životě (mohl by si cenít tvé důvěry a jeho reputace by nepatrně stoupla - system repky?)
 #- ať nevotravuje a že máš cos chtěl
+#reputace_u_postav["obchodnik"] += 10
+#maximum je 100, min je 0
 
 
 
