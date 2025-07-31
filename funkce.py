@@ -1,26 +1,26 @@
 def vyber_povolani():
     print("Zvol si své povolání:")
-    print("1 - Válečník")
-    print("2 - Kouzelník")
-    print("3 - Zloděj")
+    print("1 - Nájemný žoldák")
+    print("2 - Hacker")
+    print("3 - Plíživec")
     
     volba = input("Tvoje volba: ")
     
     if volba == "1":
-        return "Válečník"
+        return "Nájemný žoldák"
     elif volba == "2":
-        return "Kouzelník"
+        return "Hacker"
     elif volba == "3":
-        return "Zloděj"
+        return "Plíživec"
     else:
-        return "Neznámý tulák"
+        return "Pan tajemný"
 
-def pozdrav(jmeno):
-    print("Zdravím vás, vážený pane " + jmeno + "!")
-
-def mas_dost_penez(mas, cena):
-    if mas >= cena:
-        print("Skvělé! Obchodovat s vámi je radost.")
-        print("–– Skořice a Viagra přidána do inventáře ––")
+def reputation_change(char_name, rep_change):
+    reputation_system[char_name] += rep_change
+    if rep_change > 0:
+        print(f"--Reputace s {char_name} vzrostla o {rep_change}--")
+    elif rep_change < 0:
+        print(f"--Reputace s {char_name} klesla o {abs(rep_change)}--")
     else:
-        print("Je mmi líto pane, ale nemáte na to dost zlatých.")
+        print(f"--Reputace s {char_name} zůstává stejná--")
+    print(f"Aktuální reputace: {reputation_system[char_name]}")
