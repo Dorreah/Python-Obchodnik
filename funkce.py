@@ -1,8 +1,10 @@
 def vyber_povolani():
+    print("=" * 40)
     print("Zvol si své povolání:")
     print("1 - Nájemný žoldák")
     print("2 - Hacker")
     print("3 - Plíživec")
+    print("=" * 40)
     
     volba = input("Tvoje volba: ")
     
@@ -14,6 +16,12 @@ def vyber_povolani():
         return "Plíživec"
     else:
         return "Pan tajemný"
+
+reputation_system = {
+    "obchodnik": 50,
+    "Drex": 50,
+    "Tasha": 50
+}
 
 def reputation_change(char_name, rep_change):
     reputation_system[char_name] += rep_change
